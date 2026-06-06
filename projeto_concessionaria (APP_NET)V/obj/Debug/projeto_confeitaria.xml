@@ -1,0 +1,157 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+projeto_confeitaria
+</name>
+</assembly>
+<members>
+<member name="T:projeto_confeitaria.My.Resources.Resources">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_liso">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_liso_chocolate">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_notuno">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_oceano_profundo">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_royal_escuro">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.azul_tinta">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.bege_certo">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.bege_claro">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.bege_escuro">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.branco_liso">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.branco_liso1">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.branco_tinta">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.cinza">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.logo">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.logo1">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.logo2">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.marrom">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.marrom_liso">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.Pictogrammers_Material_Eye_24">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.Pictogrammers_Material_Eye_lock_open_24">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.Pictogrammers_Material_Eye_off_24">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.rosa">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.rosa_tecido">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:projeto_confeitaria.My.Resources.Resources.verde_agua">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:projeto_confeitaria.mod_geral.ExecuteQuery(System.String)">
+ <summary>Executa SELECT e retorna DataTable.</summary>
+</member>
+<member name="M:projeto_confeitaria.mod_geral.ExecuteNonQuery(System.String)">
+ <summary>Executa INSERT / UPDATE / DELETE e retorna linhas afetadas.</summary>
+</member>
+</members>
+</doc>
