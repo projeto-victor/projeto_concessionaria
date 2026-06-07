@@ -10,22 +10,22 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de Dados: `att_confeitaria`
+-- Base de Dados: `att_concessionaria`
 --
+
 CREATE DATABASE IF NOT EXISTS `att_concessionaria` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `att_concessionaria`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `balcao`
+-- Estrutura da tabela `balcao` (veículos em estoque)
 --
 CREATE TABLE IF NOT EXISTS `balcao` (
   `id_balcao` int(11) NOT NULL AUTO_INCREMENT,
@@ -34,19 +34,24 @@ CREATE TABLE IF NOT EXISTS `balcao` (
   `qtde_balcao` int(11) NOT NULL,
   `valor_balcao` int(11) NOT NULL,
   PRIMARY KEY (`id_balcao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
-
+-- Extraindo dados da tabela `balcao` (veículos disponíveis no pátio)
+--
+INSERT INTO `balcao` (`id_balcao`, `produto_balcao`, `tipo_balcao`, `qtde_balcao`, `valor_balcao`) VALUES
+(1, 'Chevrolet Onix LT', 'Hatch', 5, 58900),
+(2, 'Hyundai HB20 Comfort', 'Hatch', 3, 62400),
+(3, 'Toyota Corolla GLi', 'Sedan', 2, 112500),
+(4, 'Honda Civic Touring', 'Sedan', 1, 147900),
+(5, 'Jeep Compass Sport', 'SUV', 4, 139800),
+(6, 'Ford Ranger XLS', 'Picape', 2, 214500);
 
 -- --------------------------------------------------------
 
-
-
-
--- Estrutura da tabela `encomenda`
 --
-
+-- Estrutura da tabela `encomenda` (veículos sob encomenda)
+--
 CREATE TABLE IF NOT EXISTS `encomenda` (
   `id_encomenda` int(11) NOT NULL AUTO_INCREMENT,
   `produto_encomenda` varchar(70) NOT NULL,
@@ -54,59 +59,52 @@ CREATE TABLE IF NOT EXISTS `encomenda` (
   `valor_encomenda` int(11) NOT NULL,
   `foto_encomenda` varchar(255) NOT NULL,
   PRIMARY KEY (`id_encomenda`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
--- Extraindo dados da tabela `encomenda`
+-- Extraindo dados da tabela `encomenda` (carros que podem ser encomendados)
 --
-
 INSERT INTO `encomenda` (`id_encomenda`, `produto_encomenda`, `tipo_encomenda`, `valor_encomenda`, `foto_encomenda`) VALUES
-(3, 'carro feminino', 'BOLO', 35, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/carro_de_muie.jpg'),
-(4, 'Bolo de Coco', 'BOLO', 40, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/bolo_coco.jpg'),
-(6, 'Bolo de Ameixa', 'BOLO', 140, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/Bolo-de-Ameixa.jpg'),
-(7, 'Bolo M&M', 'BOLO', 170, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/bolo_mm.jpeg'),
-(8, 'Bolo de Banana', 'BOLO', 110, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/bolo_de_banana.jpeg'),
-(9, 'Bolo de Morango', 'BOLO', 150, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/bolo_morango.jpg'),
-(10, 'Bolo de Sonho', 'BOLO', 175, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/bolo_de_sonho.jpg'),
-(11, 'Sonho de Creme', 'VARIADOS', 30, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/sonho_creme.jpeg'),
-(12, 'Torta de Limao', 'TORTA', 80, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/torta_limao.png'),
-(14, 'Donut SpringField', 'DONUT', 60, 'D:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/donuts_springfield.jpg'),
-(15, 'Torta de morango', 'TORTA', 40, 'E:/projeto_concessionaria (APP_NET)V/bin/Debug/Fotos/torta-de-morango.jpg');
+(1, 'BMW 320i GP', 'Sedan Luxo', 245900, 'D:/concessionaria/fotos/bmw_320i.jpg'),
+(2, 'Mercedes-Benz C180', 'Sedan Luxo', 268700, 'D:/concessionaria/fotos/mercedes_c180.jpg'),
+(3, 'Audi Q3', 'SUV Premium', 289500, 'D:/concessionaria/fotos/audi_q3.jpg'),
+(4, 'Volvo XC60', 'SUV Premium', 365400, 'D:/concessionaria/fotos/volvo_xc60.jpg'),
+(5, 'Porsche Macan', 'SUV Esportivo', 489900, 'D:/concessionaria/fotos/porsche_macan.jpg'),
+(6, 'Tesla Model 3', 'Elétrico', 299990, 'D:/concessionaria/fotos/tesla_model3.jpg');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `estoque_ingred`
+-- Estrutura da tabela `estoque_ingred` (peças/componentes)
+-- Obs: mantido o nome original, mas conteúdo adaptado para concessionária
 --
-
 CREATE TABLE IF NOT EXISTS `estoque_ingred` (
   `id_ingrediente` int(11) NOT NULL AUTO_INCREMENT,
   `nome_ingrediente` varchar(70) NOT NULL,
   `qtd_ingrediente` int(10) NOT NULL,
   PRIMARY KEY (`id_ingrediente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Extraindo dados da tabela `estoque_ingred`
+-- Extraindo dados da tabela `estoque_ingred` (peças em estoque)
 --
-
 INSERT INTO `estoque_ingred` (`id_ingrediente`, `nome_ingrediente`, `qtd_ingrediente`) VALUES
-(1, 'Cenoura', 14),
-(2, 'Chocolate', 45),
-(3, 'Ovo', 504),
-(4, 'Farinha', 200),
-(6, 'manteiga', 200),
-(7, 'Morango', 70),
-(8, 'Ameixa', 30),
-(9, 'Leite', 30),
-(10, 'Oleo', 58),
-(11, 'M&M', 80);
+(1, 'Óleo do Motor (1L)', 120),
+(2, 'Filtro de Óleo', 85),
+(3, 'Pastilha de Freio (jogo)', 40),
+(4, 'Pneu Aro 16', 60),
+(5, 'Bateria 60Ah', 25),
+(6, 'Velas de Ignição (kit)', 110),
+(7, 'Correia Dentada', 30),
+(8, 'Amortecedor Dianteiro', 18),
+(9, 'Lâmpada LED Farol', 95),
+(10, 'Fluído de Arrefecimento (1L)', 200);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedidos`
+-- Estrutura da tabela `pedidos` (vendas de veículos)
 --
-
 CREATE TABLE IF NOT EXISTS `pedidos` (
   `id_pedidos` int(11) NOT NULL AUTO_INCREMENT,
   `cpf_cliente` varchar(14) NOT NULL,
@@ -118,37 +116,27 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   PRIMARY KEY (`id_pedidos`),
   KEY `cpf_cliente` (`cpf_cliente`),
   KEY `produto_pedido` (`produto_pedido`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Extraindo dados da tabela `pedidos`
+-- Extraindo dados da tabela `pedidos` (vendas realizadas)
 --
-
 INSERT INTO `pedidos` (`id_pedidos`, `cpf_cliente`, `produto_pedido`, `valor_pedido`, `qtde`, `data_pedido`, `concluido`) VALUES
-(1, '666.666.666-66', 3, 90, 3, '18/11/2025', 'ENTREGUE'),
-(2, '666.666.666-66', 3, 60, 2, '19/11/2025', 'ENTREGUE'),
-(3, '999.999.999-99', 4, 200, 5, '19/11/2025', 'ENTREGUE'),
-(4, '999.999.999-99', 3, 30, 1, '19/11/2025', 'ENTREGUE'),
-(5, '999.999.999-99', 4, 120, 3, '19/11/2025', 'ENTREGUE'),
-(6, '999.999.999-99', 3, 60, 2, '19/11/2025', 'ENTREGUE'),
-(7, '999.999.999-99', 3, 150, 5, '19/11/2025', 'ENTREGUE'),
-(8, '666.666.666-66', 4, 80, 2, '19/11/2025', 'ENTREGUE'),
-(9, '666.666.666-66', 3, 90, 3, '19/11/2025', 'ENTREGUE'),
-(10, '100.000.000-00', 9, 450, 3, '27/11/2025', 'ENTREGUE'),
-(11, '444.444.444-44', 14, 540, 9, '01/12/2025', 'ENTREGUE'),
-(12, '444.444.444-44', 10, 510, 3, '01/12/2025', 'ENTREGUE'),
-(13, '100.000.000-00', 12, 1600, 20, '01/12/2025', 'PRONTO'),
-(14, '100.000.000-00', 7, 340, 2, '01/12/2025', 'PRONTO'),
-(15, '100.000.000-00', 3, 60, 2, '01/12/2025', 'ENTREGUE'),
-(16, '202.020.202-02', 8, 440, 4, '04/12/2025', 'ENTREGUE');
-
+(1, '100.000.000-00', 1, 245900, 1, '10/11/2025', 'ENTREGUE'),
+(2, '333.333.333-33', 2, 268700, 1, '15/11/2025', 'ENTREGUE'),
+(3, '444.444.444-44', 3, 289500, 1, '20/11/2025', 'ENTREGUE'),
+(4, '999.999.999-99', 4, 365400, 1, '22/11/2025', 'ENTREGUE'),
+(5, '100.000.000-00', 5, 489900, 1, '25/11/2025', 'ENTREGUE'),
+(6, '202.020.202-02', 6, 299990, 1, '28/11/2025', 'ENTREGUE'),
+(7, '333.333.333-33', 1, 245900, 1, '01/12/2025', 'PRONTO'),
+(8, '888.888.888-88', 2, 268700, 1, '02/12/2025', 'PRONTO'),
+(9, '555.555.555-55', 3, 289500, 1, '03/12/2025', 'ENTREGUE');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `usuarios` (clientes e funcionários)
 --
-
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `cpf_usuario` varchar(14) NOT NULL,
   `nome_usuario` varchar(70) NOT NULL,
@@ -161,9 +149,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `usuarios` (mantidos os originais, pois já são genéricos)
 --
-
 INSERT INTO `usuarios` (`cpf_usuario`, `nome_usuario`, `telefone_usuario`, `email_usuario`, `senha_usuario`, `identificador`, `bloqueado`) VALUES
 ('0  .   .   -', 'FOUR', '(44) 44444-4444', 'FOUR@EMAIL', '4444', 'CLIENTE', 'SIM'),
 ('010.101.010-10', 'FUNCIONARIO', '(00) 00000-0000', 'FUNC@EMAIL', 'FUNC', 'FUNCIONARIO', 'NAO'),
@@ -180,15 +167,11 @@ INSERT INTO `usuarios` (`cpf_usuario`, `nome_usuario`, `telefone_usuario`, `emai
 ('999.999.999-99', 'LELEULES', '(99) 99999-9999', 'LELEULES@EMAIL', '99999', 'CLIENTE', 'NAO');
 
 --
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `pedidos`
+-- Constraints para tabela `pedidos` COM ON CASCADE
 --
 ALTER TABLE `pedidos`
-  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`cpf_cliente`) REFERENCES `usuarios` (`cpf_usuario`),
-  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`produto_pedido`) REFERENCES `encomenda` (`id_encomenda`);
+  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`cpf_cliente`) REFERENCES `usuarios` (`cpf_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`produto_pedido`) REFERENCES `encomenda` (`id_encomenda`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
